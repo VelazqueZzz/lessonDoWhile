@@ -15,7 +15,6 @@ fun main() {
             println("Не зарегистрирован. Пробуйте снова.")
             continue
         }
-////dfkfdslnlskdngsdg
 
         while (true) {
             println("Введите пароль: ")
@@ -25,12 +24,9 @@ fun main() {
                 println("Неверный пароль, пробуйте снова")
                 continue
             }
-
             break
         }
-
         break
     }
-
     println("Авторизация прошла успешно")
 }

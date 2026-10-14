@@ -1,36 +1,23 @@
+import kotlin.random.Random
+
 fun main() {
-    println("Пожалуйста, зарегистрируйтесь")
-    print("Введите логин: ")
-    val login = readln()
-    print("Введите пароль: ")
-    val password = readln()
+    val maxAttempts = 3
+    var attempts = 0
 
-    println("Регистрация пройдена, авторизуйтесь")
+    println("Докажите, что вы не бот. Решите пример.")
 
-    while (true) {
-        println("Введите имя пользователя: ")
-        val username = readln()
-
-        if (username != login) {
-            println("Не зарегистрирован. Пробуйте снова.")
-            continue
+    while (attempts < maxAttempts) {
+        val a = Random.nextInt(1, 10)   // 1..9
+        val b = Random.nextInt(1, 10)   // 1..9
+        val correct = a + b
+        print("Сколько будет $a + $b? ")
+        val answer = readln().toInt()
+        attempts++
+        if (answer == correct) {
+            println("Добро пожаловать!")
+            return   // успех — выходим из main
         }
-////dfkfdslnlskdngsdg
-
-        while (true) {
-            println("Введите пароль: ")
-            val pass = readln()
-
-            if (pass != password) {
-                println("Неверный пароль, пробуйте снова")
-                continue
-            }
-
-            break
-        }
-
-        break
+        println("Неверно. Осталось попыток: ${maxAttempts - attempts}")
     }
-
-    println("Авторизация прошла успешно")
+    println("Доступ запрещен")
 }

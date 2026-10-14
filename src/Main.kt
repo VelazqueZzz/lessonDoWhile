@@ -10,27 +10,13 @@ fun main() {
     while (true) {
         println("Введите имя пользователя: ")
         val username = readln()
-
-        if (username != login) {
-            println("Не зарегистрирован. Пробуйте снова.")
+        println("Введите пароль: ")
+        val pass = readln()
+        if (username != login || pass != password) {
+            println("Неверные данные для входа. Попробуйте снова.")
             continue
         }
-////dfkfdslnlskdngsdg
-
-        while (true) {
-            println("Введите пароль: ")
-            val pass = readln()
-
-            if (pass != password) {
-                println("Неверный пароль, пробуйте снова")
-                continue
-            }
-
-            break
-        }
-
         break
     }
-
     println("Авторизация прошла успешно")
 }
